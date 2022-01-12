@@ -1,0 +1,57 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "overrides": [
+      {
+          "files": ["*.ts", "*.tsx"],
+          "extends": ["plugin:@typescript-eslint/recommended", "prettier/@typescript-eslint", "prettier"],
+          "plugins": ["prettier", "react", "detox", "@typescript-eslint", "jsdoc"],
+          "rules": {
+              "prettier/prettier": ["error"],
+              "react/require-default-props": [0],
+              "camelcase": "off",
+              "@typescript-eslint/no-empty-function": "off",
+              "jsdoc/require-jsdoc": ["error", { "require": { "ArrowFunctionExpression": true } }]
+          }
+      }
+  ],
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "plugins": ["prettier", "react", "detox", "jest", "jsdoc"],
+  "rules": {
+      "react/prop-types": "off",
+      "prettier/prettier": ["error"],
+      "react/jsx-indent": ["error", 4],
+      "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
+      "react/jsx-indent-props": ["error", 4],
+      "react/jsx-closing-bracket-location": [0],
+      "react/jsx-one-expression-per-line": [0],
+      "react/jsx-wrap-multilines": [0],
+      "import/no-extraneous-dependencies": "off",
+      "no-use-before-define": "off",
+      "import/extensions": "off",
+      "import/prefer-default-export": "off",
+      "camelcase": "off",
+      "no-empty-function": "off",
+      "jsdoc/require-jsdoc": ["error", { "require": { "ArrowFunctionExpression": true } }],
+      "import/no-cycle": [2, { "maxDepth": 1 }]
+  },
+  "settings": {
+      "import/resolver": {
+          "babel-module": {}
+      }
+  },
+  "parserOptions": {
+      "ecmaVersion": 2020,
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "sourceType": "module"
+  },
+  "globals": {
+      "__DEV__": "readonly",
+      "toast": "readonly"
+  },
+  "env": {
+      "jest/globals": true
+  }
+}
